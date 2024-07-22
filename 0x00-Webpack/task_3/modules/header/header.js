@@ -1,18 +1,7 @@
-import $ from 'jquery';
-import '../header/header.css';
-import Logo from '../assets/holberton-logo.jpg';
+import "./header.css";
+const $ = require("jquery");
 
-console.log('Init header');
+$("body").append("<header></header>");
+$("header").append('<div id="logo"></div>', "<h1>Holberton Dashboard</h1>");
 
-$(document).ready(function() {
-    $('header').append('<div id="logo"></div>');
-    $('header').append('<h1>Holberton Dashboard</h1>');
-
-    $('#logo').css({
-        'background-image': `url(${Logo})`,
-        'background-size': 'cover',
-        'width': '200px',
-        'height': '200px'
-    });
-});
-
+console.log("Init header");
