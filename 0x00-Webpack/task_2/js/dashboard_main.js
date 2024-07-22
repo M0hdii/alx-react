@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import _ from 'lodash';
+import '../css/main.css';
+import Logo from '../assets/holberton-logo.jpg';
 
 let count = 0;
 
@@ -9,6 +11,7 @@ function updateCounter() {
 }
 
 $(document).ready(function() {
+    $('body').append('<div id="logo"></div>');
     $('body').append('<p>Holberton Dashboard</p>');
     $('body').append('<p>Dashboard data for the students</p>');
     $('body').append('<button>Click here to get started</button>');
@@ -16,5 +19,12 @@ $(document).ready(function() {
     $('body').append('<p>Copyright - Holberton School</p>');
 
     $('button').on('click', _.debounce(updateCounter, 500));
+
+    $('#logo').css({
+        'background-image': `url(${Logo})`,
+        'background-size': 'cover',
+        'width': '200px',
+        'height': '200px'
+    });
 });
 
